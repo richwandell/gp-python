@@ -4,8 +4,8 @@ This app demonstrates using flask as a single file python web api.
 The app can be run by first installing the dependencies using [Pipenv]
 by running `pipenv install` in the application directory. 
 
-Once the dependencies are install the app can be run by using the flask
-cli.
+Once the dependencies are installed the app can be run in development mode 
+by using the flask cli.
 
 1. Windows
     ```bash
