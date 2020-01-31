@@ -16,7 +16,6 @@ def multiply(num1: int, num2: int) -> str:
 
 @app.route('/display')
 def display() -> str:
-    print("hi")
     """
     Displays static text
     :return:
@@ -62,12 +61,10 @@ def get_json() -> str:
 
 
 if __name__ == "__main__":
-    import argparse  # for parsing passed parameters through terminal
-
+    import argparse
     parser = argparse.ArgumentParser()
     parser.add_argument("--environment", help="Hostname", default="development")
     args = parser.parse_args()
-
     environment = args.environment
     if environment == 'development':
         os.environ['FLASK_ENV'] = environment

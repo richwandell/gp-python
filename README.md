@@ -25,6 +25,21 @@ provided which can be used to map the containers port 80 to the host port 8080 b
 running `docker-compose up`.
 
 ## Tests
+Test are created for each flask route using the python `unittest` package.
+A `setUp` method is used to create a mock flask client and configure flask for testing.
+```python
+    def setUp(self) -> None:
+        app.config['TESTING'] = True
+        with app.test_client() as client:
+            self.client = client
+```
+Tests call the flask routes using parameters.
+```python
+    def test_multiply(self):
+        res: Response = self.client.get("/multiply/5/5")
+        self.assertEqual(25, int(res.get_data()))
+```
+ 
 Test can be run using the `test.py` file by running `python test.py`.
 
 [Pipenv]:https://github.com/pypa/pipenv

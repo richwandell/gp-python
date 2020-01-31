@@ -1,4 +1,4 @@
-import unittest
+import unittest, json
 from unittest import TestLoader, TextTestRunner, TestSuite
 from flask import Response
 from app import app
@@ -23,6 +23,15 @@ class TestCase(unittest.TestCase):
         input = "some text"
         res: Response = self.client.get('/display/%s' % input)
         self.assertEqual(res.get_data().decode().strip(), input)
+
+    def test_get_json(self):
+        res: Response = self.client.get('/getjson')
+        data = json.loads(res.get_data().decode())
+        self.assertIn("type", data)
+        self.assertEqual(data["type"], "articles")
+        self.assertIn("id", data)
+        self.assertEqual(data["id"], "1")
+        self.assertIn("attributes", data)
 
 
 if __name__ == "__main__":
