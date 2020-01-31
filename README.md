@@ -42,5 +42,12 @@ Tests call the flask routes using parameters.
  
 Test can be run using the `test.py` file by running `python test.py`.
 
+## Routes
+* /multiply/\<int:num1>/\<int:num2> - Multiplies two numbers and returns the result.
+* /display - Displays static text
+* /display/\<sometext> - Displays the text passed as a route parameter.
+* /getjson - Displays a dictionary as a JSONApi response. 
+ 
+
 [Pipenv]:https://github.com/pypa/pipenv
 [bjoern]:https://github.com/jonashaag/bjoern
