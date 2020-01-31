@@ -20,7 +20,9 @@ by using the flask cli.
 ## Production
 A dockerfile is provided which will install the application requirements
 as well as the [bjoern] server. The docker container will run the application 
-using the bjoern server for faster response times.  
+using the bjoern server for faster response times. A docker compose file is 
+provided which can be used to map the containers port 80 to the host port 8080 by 
+running `docker-compose up`.
 
 ## Tests
 Test can be run using the `test.py` file by running `python test.py`.
